@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+incoming/
+*.log
+paper/*.aux
+paper/*.xdv
+.DS_Store

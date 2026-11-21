@@ -1,0 +1,16 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": ".venv\\Scripts\\python.exe",
+  "command": ".venv\\Scripts\\python.exe benchmark.py",
+  "complete": true,
+  "sha256": {
+    "benchmark.py": "9ee4de48c08b34ffb7d3b8e05334d0ffeecac775958cbd66b16907c85ee244ae",
+    "junction.py": "9b45de0d232f17aa9d485f005104a4cb0ad01929e3e3a0a37989a5545a33494a",
+    "tests/test_junction.py": "fc846da1d54bd7b29aae317faf22ccb3354d19b31825cd4029dfbf55cad50da8",
+    "protocol.md": "09fc7aa71713c930a1bc74ebbfb073026caef07ac9acbf827b60aa762dc40c74",
+    "execute.ps1": "998637b66413043e139c7989950f3344a108a3849e9c525927c62c1b6f7623f8",
+    "results/diffusion.csv": "1d2132e2e88581686ebeab6147a315eecc7766e389ad931bd428c535f2213955",
+    "results/sampling.csv": "527e4c237e18f4b65287f911609789db087e302d3a36ad0c5a7d91535652dc0e"
+  }
+}
