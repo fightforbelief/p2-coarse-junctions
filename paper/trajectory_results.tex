@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Held-out endpoint scores and local state-count comparisons. For each recording the floor shown is the sharp floor for one fewer state than the number of ports. Count denotes the pooled plug-in lower bound; brackets give its range across eight contiguous blocks. Masses are normalized to total mass one.}
+\label{tab:measured}
+\begin{tabular}{r rrr rrr}
+\toprule
+ & \multicolumn{3}{c}{Passive calibration (four ports)} & \multicolumn{3}{c}{Harmonic trace (two ports)}\\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Lag (frames) & \(Y\) & \(\E_3\) & Count & \(Y\) & \(\E_1\) & Count\\
+\midrule
+1    & .0000792 & .000110 & 4 [3,4] & 0       & .000223 & 2 [2,2]\\
+4    & .00651   & .000684 & 1 [1,1] & 0       & .00120  & 2 [2,2]\\
+16   & .0219    & .00133  & 1 [1,1] & .000363 & .00478  & 2 [2,2]\\
+64   & .0259    & .00138  & 1 [1,1] & .0158   & .0167   & 2 [1,2]\\
+256  & .0260    & .00135  & 1 [1,1] & .0405   & .0255   & 1 [1,1]\\
+1024 & .0252    & .00133  & 1 [1,1] & .0394   & .0256   & 1 [1,2]\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In the passive calibration the four-state plug-in result occurred at one frame (12.8 microseconds) and in seven of its eight blocks. The pooled three-state margin was \(3.05\cdot10^{-5}\) in joint mass. For scale, the maximum forward--reverse discrepancy among two-step entries was \(1.44\cdot10^{-4}\). These statistics involve different entries; the discrepancy illustrates the resolution required to interpret the margin. At four frames the scalar already permitted a one-state hub. Both shuffled recordings returned only the trivial endpoint count at every lag. The exact and occupancy-relaxed bounds gave identical pooled counts at all twelve measured settings. In particular the relaxed three-state floor at one frame was \(1.05\cdot10^{-4}\), also above the observed mass. The benefit of sharpness in these data is a larger numerical margin; its decision advantage appears in the constructive example and one grid configuration.
+
+The separate return-port test found 1,705 matches among 4,914 excursion pairs in the passive recording (conditional null expectation 1,232.0), and 385 among 453 in the harmonic recording (expectation 226.6). Each raw permutation \(p\)-value was 0.0001, giving 0.0002 after Holm adjustment. The corresponding shuffled \(p\)-values were 0.546 and 0.872. The port-specific supermartingale test supported at least two states in the harmonic recording (381/445 and 399/462 same-port exits). In the passive recording all four fractions lay between 0.268 and 0.294, yielding the trivial lower bound of one by that test. Thus full-path evidence excludes a one-state homogeneous hub in both experiments; the four-state figure for the passive record remains a descriptive two-lag comparison. All results concern memory in a model of the digitized coordinates, which include the instrument response.

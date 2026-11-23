@@ -1,0 +1,17 @@
+{
+  "inputs": {
+    "junction.py": "9b45de0d232f17aa9d485f005104a4cb0ad01929e3e3a0a37989a5545a33494a",
+    "empirical/analyze.py": "a3524ecff34532b59afab7e59c21c3d34769df5b92f2d3838b43a387bf0b377e",
+    "empirical/passive.py": "845e2f3de8977180feecc3a8677471ccdcc6bf401f39d7a337a15362ed9da1cd",
+    "empirical/test_trajectory.py": "4f3dceb334cf0fc8367ffc2896ab66d8c0c66d702c90a24b20ce140e7660cdc3",
+    "empirical/trajectory.py": "98377a951ffe89c3fc222fd7b1708bae0fbf610d34fb0f79679819770f3147e9",
+    "empirical/protocol.md": "c27cbd8030f815b70c40736de007e616b567683db454a0539c0665333dd9450b",
+    "empirical/requirements.txt": "f1c79d7222404b224367a732345e1df272390f876256c348cba88d18bcb8cb55"
+  },
+  "outputs": {
+    "passive.json": "14124988b2c84e22b8ffa1233ceaf2f6523a3024b66bd1d5ec417bf8a112fdb9",
+    "passive.csv": "88caf43d89b8913eb451cf8888f3bc19f77faf4777e5c3cda9a905fe54eb5028",
+    "harmonic.json": "b31d224b6cd869c4b6d565a0b665a2f23d5fbcba336486e4e4d60e71f1cd1101",
+    "harmonic.csv": "e61dc809cad3e7301f5ce8432d97e7aa04f507989393df6861173012007dc90e"
+  }
+}

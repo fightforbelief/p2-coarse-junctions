@@ -16,7 +16,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-A reversible transport model may reproduce the traffic entering a coarse cell and still transmit mass between its neighbors too quickly. We determine the smallest two-step cross-port mass compatible with a given one-step traffic vector, cell mass and budget of hidden states inside the cell. For metric port costs the optimum is a partition of the ports followed by a scalar mass allocation. A reversible stochastic kernel attains it. For \(d\) equally loaded ports and \(k\le d\) hidden states the answer is \(\binom{d-k+1}{2}a^2/[M-(k-1)a]\), where \(a\) is one port's traffic and \(M\) the cell mass. The bound permits arbitrary hidden complexity outside the cell. We derive a distinct sharp curvature bound for reversible continuous-time networks and a finite-sample exclusion test using independent endpoint counts. A reflecting diffusion benchmark quantifies how observation lag, port geometry and sample size affect the number of states the data can certify.
+A reversible transport model may reproduce the traffic entering a coarse cell and still transmit mass between its neighbors too quickly. We determine the smallest two-step cross-port mass compatible with a given one-step traffic vector, cell mass and budget of hidden states inside the cell. For metric port costs the optimum is a partition of the ports followed by a scalar mass allocation. A reversible stochastic kernel attains it, including an irreducible realization when spare exterior mass and port capacity are available. For \(d\) equally loaded ports and \(k\le d\) hidden states the answer is \(\binom{d-k+1}{2}a^2/[M-(k-1)a]\), where \(a\) is one port's traffic and \(M\) the cell mass. The bound permits arbitrary hidden complexity outside the cell. We derive a distinct sharp curvature bound for reversible continuous-time networks and a finite-sample exclusion test using independent endpoint counts. A reflecting diffusion benchmark isolates the effect of port geometry. On two published particle recordings, the four-port passive calibration gives a plug-in lower bound of four at one frame and one at all five longer lags. Separate full-path tests reject a one-state hub in both recordings.
 \end{abstract}
 
 \section{Coarse measurements and a local inverse problem}
@@ -84,6 +84,8 @@ The second inequality uses \(p_h/n_h\le D/(D+1)\). Multiplication by \(a/2\) giv
 \end{proof}
 
 Thus four equally loaded ports force some cross-port transfer even with three junction states. At \(M=1,a=0.2\), the minima for \(k=1,2,3,4\) are \(0.24,0.15,1/15,0\). The data required for this comparison comprise four one-step masses and one sum of two-step masses. No choice of memory in the exterior can compensate for a violation.
+
+\input{comparisons}
 
 \subsection{The error of a surrogate that can change its one-step fit}
 A fitted model may sacrifice some one-step accuracy to improve its two-step prediction. There is an exact tradeoff in the same observable coordinates.
@@ -164,24 +166,32 @@ with the natural endpoints for all-zero or all-one counts. On the joint coverage
 
 \input{sampling_results}
 
+\input{trajectories}
+
 \section{Interpretation and scope}
 A sharp scalar minimum can answer a model-design question even when the full hidden dynamics are unidentifiable. In a reversible network surrogate, violating the two-lag inequality calls for extra states inside the chosen cell or a change in the model assumptions. Nonnegative conductances, exact flux at one lag and mass conservation elsewhere cannot remove that violation. The formulas also permit a design calculation before acquiring full trajectories: the balanced expression specifies the cross-port resolution needed to exclude a proposed budget.
 
-The observed lower bound is capped by the number of ports, even for a continuum junction. Equality of the monitored statistic leaves other transition masses and higher lags unconstrained. Equation~\eqref{eq:finite} is exact for stationary reversible discrete-time kernels with deterministic aggregate labels. A continuous-time embedding, imposed connectivity, fixed external dynamics or a specified internal geometry can raise the minimum. For selected nonmetric costs the unconstrained-mass expression remains a valid finite-lag lower bound, while a fractional allocation can outperform every pure partition under finite occupancy. Enumerating partitions is practical for small neighborhoods and grows combinatorially with the number of ports.
+The observed lower bound is capped by the number of ports, even for a continuum junction. Equality of the monitored statistic leaves other transition masses and higher lags unconstrained. Equation~\eqref{eq:finite} is exact for stationary reversible discrete-time kernels with deterministic aggregate labels. Proposition~\ref{prop:connected} covers freely connected exteriors. Prescribed external dynamics, a required continuous-time embedding or a fixed internal geometry impose additional constraints. For selected nonmetric costs the unconstrained-mass expression remains a valid finite-lag lower bound, while a fractional allocation can outperform every pure partition under finite occupancy. Enumerating partitions is practical for small neighborhoods and grows combinatorially with the number of ports.
 
-The numerical study uses an analytically specified diffusion and independent ensemble counts. Using one correlated experimental trajectory would require a dependence model or another source of valid joint confidence limits. Non-equilibrium preparations and directional transport can change the midpoint identity. These distinctions delimit the model classes an experimental exclusion can address.
+The original diffusion experiment tests geometry and sampling power under a known law. The measured trajectories assess performance on instrument outputs. The 95\% guarantee for those records uses additional entry and exit marks. Obtaining comparably calibrated two-lag-only intervals from a single dependent recording with unknown mixing remains open here. Non-equilibrium preparations and directional transport can change the midpoint identity. These distinctions delimit the model classes an experimental exclusion can address.
 
 \paragraph{Data and code availability.}
-The protocol, Python implementation, numerical tables and replication commands are available in the \href{https://github.com/fightforbelief/p2-coarse-junctions}{project repository}. All benchmark inputs are specified analytically.
+The protocol, Python implementation, numerical tables and replication commands are available in the \href{https://github.com/fightforbelief/p2-coarse-junctions}{project repository}. The original diffusion inputs are specified analytically. Fixed-version sources, raw-file digests, extraction commands, directional counts and analysis scripts for the measured records accompany the paper.
 \paragraph{Funding and interests.}
 The authors received no specific funding for this work and declare no competing interests.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
+\small\raggedright\setlength{\itemsep}{2pt}
 \bibitem{fredkin} D.~R. Fredkin and J.~A. Rice, \href{https://nvlpubs.nist.gov/nistpubs/jres/090/jresv90n6p517_A1b.pdf}{Aggregated Markov processes and channel gating kinetics}, J. Res. Natl. Bur. Stand. 90 (1985), 517--520.
 \bibitem{noe} F. No\'e, H. Wu, J.-H. Prinz and N. Plattner, \href{https://arxiv.org/abs/1309.3220}{Projected and hidden Markov models for calculating kinetics and metastable states of complex molecules}, J. Chem. Phys. 139 (2013), 184114.
 \bibitem{vidyasagar} M. Vidyasagar, \href{https://personal.utdallas.edu/~mxv091000/Research/hmm-full.pdf}{The complete realization problem for hidden Markov models: a survey and some new results}, Math. Control Signals Systems 23 (2011), 1--65.
 \bibitem{duan} Y. Duan, M. Wang, Z. Wen and Y. Yuan, \href{https://doi.org/10.1137/18M1220790}{Adaptive low-nonnegative-rank approximation for state aggregation of Markov chains}, SIAM J. Matrix Anal. Appl. 41 (2020), 244--278.
 \bibitem{cicalese} F. Cicalese, E. Laber and L. Murtinho, \href{https://proceedings.mlr.press/v97/cicalese19a.html}{New results on information theoretic clustering}, Proc. Mach. Learn. Res. 97 (2019), 1242--1251.
+\bibitem{rao} C.~R. Rao, \href{https://doi.org/10.1016/0040-5809(82)90004-1}{Diversity and dissimilarity coefficients: a unified approach}, Theor. Popul. Biol. 21 (1982), 24--43.
+\bibitem{burshtein} D. Burshtein, V. Della Pietra, D. Kanevsky and A. N\'adas, \href{https://doi.org/10.1214/aos/1176348789}{Minimum impurity partitions}, Ann. Statist. 20 (1992), 1637--1646.
+\bibitem{ctrap} M. Bugiel, \href{https://doi.org/10.5281/zenodo.7729824}{Pylake tutorial dataset: Force calibration}, Zenodo (2023), version 7729824.
+\bibitem{argun} A. Argun, T. Thalheim, S. Bo, F. Cichos and G. Volpe, \href{https://arxiv.org/abs/2006.08963}{Enhanced force-field calibration via machine learning}, Appl. Phys. Rev. 7 (2020), 041404. Experimental trace and notebook in \href{https://github.com/softmatterlab/DeepCalib/tree/bea01cc09413d9a19c5e23aad9e594fe879fea61}{DeepCalib Example 1b}.
+\bibitem{howard} S.~R. Howard, A. Ramdas, J. McAuliffe and J. Sekhon, \href{https://doi.org/10.1214/18-PS321}{Time-uniform Chernoff bounds via nonnegative supermartingales}, Probab. Surv. 17 (2020), 257--317.
 \bibitem{keller} M. Keller, D. Lenz, F. M\"unch, M. Schmidt and A. Telcs, \href{https://doi.org/10.1112/blms/bdw054}{Note on short-time behavior of semigroups associated to self-adjoint operators}, Bull. Lond. Math. Soc. 48 (2016), 935--944.
 \end{thebibliography}
 \end{document}
